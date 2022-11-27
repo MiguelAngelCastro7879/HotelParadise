@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="CustomTheme" parent="Theme.AppCompat.Light">
+
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+    </style>
+
+<!--     ESTILOS PARA LA BARRA DE RATING-->
+    <style name="RatingBar" parent="Theme.MaterialComponents.DayNight">
+        <item name="ratingBarStyle">@style/Controls.RatingBar</item>
+        <item name="colorControlActivated">#CCC800</item>
+        <item name="colorControlNormal">#737373</item>
+    </style>
+
+    <style name="Controls.RatingBar" parent="Widget.AppCompat.RatingBar.Small">
+        <item name="android:isIndicator">false</item>
+    </style>
+
+
+<!--    ESTILOS PARA LA CARDVIEW DE DETALLES-->
+
+    <style name="CustomCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
+    </style>
+
+
+    <style name="ShapeAppearanceOverlay_card_custom_corners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">80dp</item>
+        <item name="cornerSizeTopLeft">80dp</item>
+        <item name="cornerSizeBottomRight">80dp</item>
+        <item name="cornerSizeBottomLeft">80dp</item>
+    </style>
+
+</resources>
