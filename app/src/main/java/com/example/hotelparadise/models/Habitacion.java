@@ -23,6 +23,10 @@ public class Habitacion {
         this.precio = precio;
     }
 
+    public Habitacion(String nombre) {
+        this.nombre = nombre;
+    }
+
 
 
     public String getNombre() {

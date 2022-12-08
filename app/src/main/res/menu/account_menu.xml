@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/profile"
+        android:title="Cuenta" />
+
+    <item
+        android:id="@+id/payment_methods"
+        android:icon="@drawable/payment_methods"
+        android:title="Metodos de pago" />
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/logout"
+        android:title="Cerrar sesion" />
+
+</menu>

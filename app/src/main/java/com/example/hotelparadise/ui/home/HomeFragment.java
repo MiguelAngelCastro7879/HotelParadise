@@ -38,13 +38,15 @@ public class HomeFragment extends Fragment {
     void llenarRecycler(){
         List<Habitacion> habitacionesList = new ArrayList<>();
         HabitaciónAdapter ha = new HabitaciónAdapter(habitacionesList);
-        habitacionesList.add(new Habitacion());
-        habitacionesList.add(new Habitacion());
-        habitacionesList.add(new Habitacion());
-        habitacionesList.add(new Habitacion());
-        habitacionesList.add(new Habitacion());
-        habitacionesList.add(new Habitacion());
-        habitacionesList.add(new Habitacion());
+        habitacionesList.add(new Habitacion("Hotel Paraiso 1"));
+        habitacionesList.add(new Habitacion("Hotel Paraiso 2"));
+        habitacionesList.add(new Habitacion("Hotel Paraiso 3"));
+        habitacionesList.add(new Habitacion("Hotel Paraiso 4"));
+        habitacionesList.add(new Habitacion("Hotel Paraiso 5"));
+        habitacionesList.add(new Habitacion("Hotel Paraiso 6"));
+        habitacionesList.add(new Habitacion("Hotel Paraiso 7"));
+        habitacionesList.add(new Habitacion("Hotel Paraiso 8"));
+        habitacionesList.add(new Habitacion("Hotel Paraiso 9"));
         rec_habitaciones.setHasFixedSize(true);
         rec_habitaciones.setLayoutManager(new GridLayoutManager(binding.getRoot().getContext(), 2));
         rec_habitaciones.setAdapter(ha);

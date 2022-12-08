@@ -1,8 +1,11 @@
 package com.example.hotelparadise;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -11,7 +14,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class DetailsActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class DetailsActivity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener {
 
     private GoogleMap mMap;
 //    private ActivityMapsBinding binding;
@@ -21,13 +24,21 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.acustom_action_bar2);
+        View view =getSupportActionBar().getCustomView();
+
+        view.findViewById(R.id.action_bar_back).setOnClickListener(this);
+
+        findViewById(R.id.hacer_reservacion).setOnClickListener(this);
 //        binding = ActivityMapsBinding.inflate(getLayoutInflater());
 //        setContentView(binding.getRoot());
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-//        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-//                .findFragmentById(R.id.maps_place);
-//        mapFragment.getMapAsync(this);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.maps_place);
+        mapFragment.getMapAsync(this);
     }
 
     /**
@@ -48,5 +59,16 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
         LatLng sydney = new LatLng(25.53500, -103.404444);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.hacer_reservacion:
+                startActivity(new Intent(DetailsActivity.this, ReservationActivity.class));
+                break;
+            case R.id.action_bar_back:
+                finish();
+        }
     }
 }

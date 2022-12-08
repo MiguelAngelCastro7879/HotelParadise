@@ -1,11 +1,15 @@
 package com.example.hotelparadise.adapters;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hotelparadise.DetailsActivity;
@@ -41,9 +45,24 @@ public class HabitaciónAdapter extends RecyclerView.Adapter<HabitaciónAdapter.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        Habitacion hab;
+        ImageView favorito;
+        TextView nombre;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            nombre = itemView.findViewById(R.id.name);
+            favorito = itemView.findViewById(R.id.favorito);
 
+
+            favorito.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    favorito.setImageResource(R.drawable.ic_baseline_favorite_24);
+                    favorito.setEnabled(false);
+
+                    Singleton.getInstance(hab);
+                }
+            });
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -53,6 +72,12 @@ public class HabitaciónAdapter extends RecyclerView.Adapter<HabitaciónAdapter.
         }
 
         public void llenar(Habitacion h) {
+            nombre.setText(h.getNombre());
+            hab = h;
+            if(Singleton.getNames(h.getNombre())){
+                favorito.setImageResource(R.drawable.ic_baseline_favorite_24);
+                favorito.setEnabled(false);
+            }
         }
 
     }

@@ -21,12 +21,12 @@
                     android:layout_height="match_parent">
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="250dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             android:adjustViewBounds="true"
-                            android:src="@drawable/hotel_room"
+                            android:background="@drawable/hotel_room"
                             android:id="@+id/imagen_hotel" />
                         <TextView
                             android:layout_width="wrap_content"
@@ -69,7 +69,7 @@
                             />
                         <androidx.core.widget.NestedScrollView
                             android:layout_width="match_parent"
-                            android:layout_height="200dp"
+                            android:layout_height="150dp"
                             android:fillViewport="true"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -83,7 +83,7 @@
                                     android:layout_height="match_parent"
                                     android:textColor="@color/black"
                                     android:id="@+id/descripcion"
-                                    android:text="@string/large_text"/>
+                                    android:text="Habitaciones clásicas y elegantes, pero con detalles contemporáneos y una decoración exquisita. Muy acogedoras, dan una sensación de confort intemporal; diseñadas para momentos especiales y estancias tranquilas. Las habitaciones tienen entre 20 m2 y 25 m2 y vistas a la villa de Estoril. Camas individuales o cama de matrimonio, Queen o King size, baño en mármol, algunos con bañera y ducha separados."/>
                         </androidx.core.widget.NestedScrollView>
 
                         <TextView
@@ -109,7 +109,7 @@
                             app:layout_constraintTop_toBottomOf="@id/txt_caracteristicas"
                             android:layout_marginStart="15dp"
                             android:layout_marginEnd="15dp"
-                            android:background="@color/black"
+                            android:background="@drawable/caracteristicas"
                             android:id="@+id/caracteristicas"
                             android:layout_marginTop="5dp"/>
 
@@ -154,6 +154,7 @@
                             android:textStyle="bold"
                             android:layout_marginTop="10dp"
                             android:textSize="15dp"/>
+
                         <fragment
                             android:layout_width="match_parent"
                             android:layout_height="300dp"
@@ -167,7 +168,7 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="20dp"
                             android:name="com.google.android.gms.maps.SupportMapFragment"
-                        />
+                            />
         </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 
@@ -206,7 +207,8 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
-                    android:layout_gravity="right">
+                    android:layout_gravity="right"
+                    android:id="@+id/hacer_reservacion">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
